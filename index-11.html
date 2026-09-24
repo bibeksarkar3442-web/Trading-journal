@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tradebook – Trading Journal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1F3A5F">
+<meta name="description" content="Trading journal and analytics for Forex, Indian market and crypto traders.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Tradebook">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <h1>Tradebook</h1>
+  <div class="chips" id="periodChips" aria-label="Period">
+    <button data-p="today">Day</button>
+    <button data-p="week">Week</button>
+    <button data-p="month">Month</button>
+    <button data-p="year">Year</button>
+    <button data-p="all">All</button>
+  </div>
+</header>
+
+<main id="view"></main>
+
+<button class="fab" id="addBtn" aria-label="Add trade">+</button>
+
+<nav class="tabs" id="tabs">
+  <button data-v="dash" class="on">Home</button>
+  <button data-v="journal">Journal</button>
+  <button data-v="stats">Insights</button>
+  <button data-v="tools">Tools</button>
+  <button data-v="more">Settings</button>
+</nav>
+
+<dialog id="sheet"></dialog>
+<dialog id="viewer">
+  <div class="sheet">
+    <img id="vimg" alt="Trade screenshot">
+    <div class="actions"><button class="btn danger" id="vrem" type="button">Remove photo</button><button class="btn primary" id="vclose" type="button">Close</button></div>
+  </div>
+</dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<div class="lockscreen" id="lockScreen" hidden>
+  <div class="lockbox">
+    <h1>Tradebook</h1>
+    <p class="hint">Enter your passcode to continue</p>
+    <input type="password" id="lockInput" inputmode="numeric" autocomplete="off" placeholder="Passcode">
+    <button class="btn primary" id="lockBtn" type="button">Unlock</button>
+    <p class="hint" id="lockErr" style="color:var(--loss);min-height:18px"></p>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
